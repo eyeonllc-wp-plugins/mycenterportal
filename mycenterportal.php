@@ -24,7 +24,7 @@ define( 'MCD_PLUGIN_URL', plugins_url( '', __FILE__ ).'/' );
 
 require MCD_PLUGIN_PATH.'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/eyeonllc-wp-plugins/mycenterportal.git',
+	'https://github.com/eyeonllc-wp-plugins/mycenterportal',
 	__FILE__,
 	'mycenterportal'
 );
