@@ -1,9 +1,7 @@
-=== Plugin Name ===
-
-Stable tag:      0.0.3
-Tested up to:    5.9
-Licence:         GPLv2 or later
-Licence URI:     http://www.gnu.org/licenses/gpl-2.0.html
+Stable tag: 0.0.4
+Tested up to: 5.9
+Licence: GPLv2 or later
+Licence URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Plugin will help your website to fetch the Center related content from MyCenterPortal.com.
 
@@ -17,7 +15,7 @@ Once you install this plugin you can choose a Center. You can manage all the Cen
 
 Install the plugin from Wordpress Plugin Directory.
 
-* Go to My Center Portal settings page, and choose a Center from dropdown.
+- Go to My Center Portal settings page, and choose a Center from dropdown.
 
 Shortcodes:
 
@@ -120,7 +118,7 @@ You can find all the shortcodes available under plugin settings after installati
 = 7.8.2 - 18 Feb 2022 =
 
 - Shopping Guide shortcode added.
-- Store Affiliate link added as shopping bag icon on single store pages. 
+- Store Affiliate link added as shopping bag icon on single store pages.
 
 = 7.7.10 - 05 Feb 2022 =
 

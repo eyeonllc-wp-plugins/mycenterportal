@@ -1,13 +1,23 @@
 <?php
 /*
-Plugin Name: My Center Portal
-Plugin URI: http://mycenterportal.com/
+Plugin Name: MyCenterPortal
+Plugin URI: https://github.com/eyeonllc-wp-plugins/mycenterportal
 Description: Show Deals, Stores & Events of a Center from mycenterportal.com portal.
-Version: 0.0.3
+Version: 0.0.4
 Author: EyeOn LLC
 Author URI: https://eyeonllc.com/
 Licence: GPLv2 or later
 */
+
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/eyeonllc-wp-plugins/mycenterportal',
+	__FILE__,
+	'mycenterportal'
+);
+$myUpdateChecker->setBranch('master');
+// $myUpdateChecker->setAuthentication('token_here');
+
 
 defined('MCD_REDUX_OPT_NAME')		OR define( 'MCD_REDUX_OPT_NAME', 'mcd_settings' );
 // date_default_timezone_set(wp_timezone_string());
@@ -21,15 +31,6 @@ define( 'MCD_PLUGIN_TITLE', 'My Center Portal' );
 define( 'MCD_PLUGIN', plugin_basename( __FILE__ ) );
 define( 'MCD_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'MCD_PLUGIN_URL', plugins_url( '', __FILE__ ).'/' );
-
-require MCD_PLUGIN_PATH.'plugin-update-checker/plugin-update-checker.php';
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/eyeonllc-wp-plugins/mycenterportal',
-	__FILE__,
-	'mycenterportal'
-);
-$myUpdateChecker->setBranch('master');
-// $myUpdateChecker->setAuthentication('token_here');
 
 $plugin_data = get_file_data(MCD_PLUGIN_PATH.'mycenterportal.php', array("version"=>"Version"));
 define('MCD_PLUGIN_VERSION', $plugin_data['version']);
