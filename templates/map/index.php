@@ -18,7 +18,14 @@ if( wp_is_mobile() ) {
 } else {
 	$url .= '&device=desktop';
 }
-echo file_get_contents($url, false, $cxContext);
+
+$args = array(
+  'sslverify' => false,
+);
+$req = wp_remote_get( $url, $args );
+$body = wp_remote_retrieve_body( $req );
+echo $body;
+// echo file_get_contents($url, false, $cxContext);
 
 ?>
 
