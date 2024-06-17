@@ -3,7 +3,7 @@
 Plugin Name: MyCenterPortal
 Plugin URI: https://eyeonllc.com/
 Description: Show Deals, Stores & Events of a Center from mycenterportal.com portal.
-Version: 0.0.10
+Version: 0.0.11
 Author: EyeOn LLC
 Author URI: https://eyeonllc.com/
 Licence: GPLv2 or later
@@ -41,7 +41,7 @@ if( isset($mcd_settings['mcd_site_mode']) ) {
 	if( $mcd_settings['mcd_site_mode'] == 'dev' ) {
 		$api_base_url = 'https://test.mycenterdeals.com/';
 	} elseif( $mcd_settings['mcd_site_mode'] == 'local' ) {
-		$api_base_url = 'https://staging.mycenterportal.test/';
+		$api_base_url = 'http://localhost:8080/';
 	}
 }
 defined('API_BASE_URL')				OR define( 'API_BASE_URL', $api_base_url );

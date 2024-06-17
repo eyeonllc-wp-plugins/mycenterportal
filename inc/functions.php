@@ -3,9 +3,9 @@
 // print array and variables for debugging 
 function mcp_debug($item = array(), $die = true, $display = true) {
 	if( is_array($item) || is_object($item) ) {
-		echo '<pre style="padding-left:180px;'.($display?'':'display:none').'">'; print_r($item); echo '</pre>';
+		echo '<pre class="debug" style="padding-left:180px;'.($display?'':'display:none').'">'; print_r($item); echo '</pre>';
 	} else {
-		echo '<div style="padding-left:180px;'.($display?'':'display:none').'">'.$item.'</div>';
+		echo '<div class="debug" style="padding-left:180px;'.($display?'':'display:none').'">'.$item.'</div>';
 	}
 	
 	if( $die ) {
@@ -55,9 +55,12 @@ function mcd_api_data($url) {
 	$url .= (strpos($url, '?')?'&':'?').'time='.time();
 	$args = array(
 		'sslverify' => false,
+		'timeout'   => 5
 	);
+	mcp_debug($url, false, false);
 	$req = wp_remote_get( $url, $args );
 	$body = wp_remote_retrieve_body( $req );
+	mcp_debug($body, false, false);
 	$data = json_decode( $body, true );
 	return $data;
 }
