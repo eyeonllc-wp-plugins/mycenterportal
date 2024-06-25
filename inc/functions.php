@@ -57,10 +57,8 @@ function mcd_api_data($url) {
 		'sslverify' => false,
 		'timeout'   => 5
 	);
-	mcp_debug($url, false, false);
 	$req = wp_remote_get( $url, $args );
 	$body = wp_remote_retrieve_body( $req );
-	mcp_debug($body, false, false);
 	$data = json_decode( $body, true );
 	return $data;
 }
